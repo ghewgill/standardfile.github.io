@@ -190,7 +190,7 @@ No Content
 #### POST auth/sign_in
 **Authenticates a user and returns a JWT.**
 
-*Note*: Passwords needs to be processed locally before being sent to the server. See Encryption for more. Never send the user's inputted password to the server.
+*Note*: The password needs to be processed locally before being sent to the server. See Encryption for more. Never send the user's inputted password to the server.
 
 *Params: email, password*
 
@@ -372,7 +372,7 @@ Given a user inputted password `uip`, the client's job is to generate a password
     mk = key.substring(key.length/2, key.length)
     ```
 
-3.  Client sends `pw` to the server as the user's "regular" password and stores `mk` locally. (`mk` is never sent to the server).
+3.  Client sends `pw` to the server as the user's "regular" password and stores `mk` locally. (`mk` is never sent to the server). Note that the bytes of `pw` must be hex encoded using the digits `0-9` and `a-f` (lower case required).
 
 **Registration Steps**
 
